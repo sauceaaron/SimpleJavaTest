@@ -18,7 +18,8 @@ public class TestNGThreadsafeTest
 		int temp = count.get();
 		count.set(temp+1);
 		Thread.sleep(1000);
-		System.out.println(count.get() + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		System.out.print(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName() + " : ");
+		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
 	}
 
 	@Test
@@ -27,6 +28,7 @@ public class TestNGThreadsafeTest
 		Thread.sleep(1000);
 		int temp = count.get();
 		count.set(temp+1);
-		System.out.println(count.get() + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		System.out.print(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName() + " : ");
+		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
 	}
 }

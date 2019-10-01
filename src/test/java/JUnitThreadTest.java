@@ -12,6 +12,7 @@ public class JUnitThreadTest
 	{
 		count++;
 		Thread.sleep(1000);
+		System.out.print(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName() + " : ");
 		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
 		assertEquals(count, 1);
 	}
@@ -21,6 +22,7 @@ public class JUnitThreadTest
 	{
 		count++;
 		Thread.sleep(1000);
+		System.out.print(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName() + " : ");
 		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
 		assertEquals(count, 1);
 	}
