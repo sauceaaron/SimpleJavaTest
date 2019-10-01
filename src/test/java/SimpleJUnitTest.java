@@ -44,5 +44,7 @@ public class SimpleJUnitTest
 		String title = driver.getTitle();
 
 		assertEquals("Swag Labs", title);
+
+		driver.quit();
 	}
 }
