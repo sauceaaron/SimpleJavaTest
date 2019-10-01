@@ -1,5 +1,7 @@
 import org.testng.annotations.Test;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class TestNGThreadTest
 {
 	public int count = 0;
@@ -10,6 +12,7 @@ public class TestNGThreadTest
 		count++;
 		Thread.sleep(1000);
 		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		assertEquals(count, 1);
 	}
 
 	@Test
@@ -17,7 +20,7 @@ public class TestNGThreadTest
 	{
 		Thread.sleep(1000);
 		count++;
-
 		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		assertEquals(count, 1);
 	}
 }

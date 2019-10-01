@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+
 public class JUnitThreadTest
 {
 	public int count = 0;
@@ -10,6 +13,7 @@ public class JUnitThreadTest
 		count++;
 		Thread.sleep(1000);
 		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		assertEquals(count, 1);
 	}
 
 	@Test
@@ -18,5 +22,6 @@ public class JUnitThreadTest
 		count++;
 		Thread.sleep(1000);
 		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		assertEquals(count, 1);
 	}
 }
