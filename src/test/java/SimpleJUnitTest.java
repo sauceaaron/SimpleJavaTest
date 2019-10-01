@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 public class SimpleJUnitTest
 {
 	@Test
-	public void test() throws MalformedURLException
+	public void testGetTitle() throws MalformedURLException
 	{
 		String username = System.getenv("SAUCE_USERNAME");
 		String accessKey = System.getenv("SAUCE_ACCESS_KEY");
