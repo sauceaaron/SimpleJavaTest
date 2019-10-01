@@ -1,6 +1,8 @@
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class TestNGThreadsafeTest
 {
 	public ThreadLocal<Integer> count;
@@ -18,8 +20,10 @@ public class TestNGThreadsafeTest
 		int temp = count.get();
 		count.set(temp+1);
 		Thread.sleep(1000);
-		System.out.print(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName() + " : ");
-		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		System.out.println(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+		System.out.println(Thread.currentThread().getThreadGroup() + " " + Thread.currentThread().getName() + " " + Thread.currentThread().getId());
+		System.out.println("count = " + count.get());
+		assertEquals(count.get().intValue(), 1);
 	}
 
 	@Test
@@ -28,7 +32,10 @@ public class TestNGThreadsafeTest
 		Thread.sleep(1000);
 		int temp = count.get();
 		count.set(temp+1);
-		System.out.print(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName() + " : ");
-		System.out.println(count + " " + Thread.currentThread().getThreadGroup() + Thread.currentThread().getName() + Thread.currentThread().getId());
+		System.out.println(Thread.currentThread().getStackTrace()[1].getClassName() +  "." + Thread.currentThread().getStackTrace()[1].getMethodName());
+		System.out.println(Thread.currentThread().getThreadGroup() + " " + Thread.currentThread().getName() + " " + Thread.currentThread().getId());
+		System.out.println("count = " + count.get());
+		assertEquals(count.get().intValue(), 1);
+
 	}
 }
