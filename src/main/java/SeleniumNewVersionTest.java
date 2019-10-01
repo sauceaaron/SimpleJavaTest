@@ -28,7 +28,6 @@ public class SeleniumNewVersionTest
 		caps.setCapability("platformName", "Windows 8.1");
 		caps.setCapability("browserVersion", "77.0");
 		caps.setCapability("sauce:options", sauceOpts);
-		caps.setCapability("goog:chromeOptions", chromeOpts);
 
 		String sauceUrl = "https://"+username+":"+accessKey+"@ondemand.saucelabs.com/wd/hub";
 
